@@ -1,0 +1,53 @@
+{
+    "todos": [
+      {
+        "id": 1,
+        "title": "Learn JavaScript",
+        "description": "Study JavaScript basics and advanced concepts.",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "title": "Build a Todo App",
+        "description": "Create a web application for managing todos.",
+        "completed": true
+      },
+      {
+        "id": 3,
+        "title": "Prepare for Interview",
+        "description": "Review algorithms, data structures, and system design.",
+        "completed": false,
+        "priority": "high"
+      },
+      {
+        "id": 4,
+        "title": "Exercise",
+        "description": "Go for a jog or hit the gym.",
+        "completed": false,
+        "type": "physical"
+      },
+      {
+        "id": 5,
+        "title": "Read a Book",
+        "description": "Finish reading 'Sapiens' by Yuval Noah Harari.",
+        "completed": true,
+        "category": "personal development"
+      },
+      {
+        "id": 6,
+        "title": "Write Blog Post",
+        "description": "Create a blog post about modern web development trends.",
+        "completed": false,
+        "dueDate": "2024-08-15"
+      },
+      {
+        "id": 7,
+        "title": "Buy Groceries",
+        "description": "Purchase fruits, vegetables, and other essentials.",
+        "completed": false,
+        "category": "shopping",
+        "dueDate": "2024-07-21"
+      }
+    ]
+  }
+  
