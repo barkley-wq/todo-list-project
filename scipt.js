@@ -1,4 +1,3 @@
-const apiUrl=`http://localhost:3000/todo`;
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
@@ -10,21 +9,14 @@ todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteTodo);
 filterOption.addEventListener("click", filterTodo);
 
-// Fetch todos from API
-fetch(apiUrl)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    data.forEach(todo => {
-      addTodoToDOM(todo); // Assuming addTodoToDOM function is defined to add todos to DOM
-    });
-  })
-  .catch(error => console.error('Error fetching todos:', error));
-
+//fetch 
+function fetchTodos() {
+  fetch('http://localhost:5507/todos')
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+      });
+}
 //Functions
 
 function addTodo(e) {
@@ -36,13 +28,14 @@ function addTodo(e) {
   //Create list
   const newTodo = document.createElement("li");
   newTodo.innerText = todoInput.value;
+  // Sets the text of the li element to the value entered in the todoInput field.
   //Save to local - do this last
   //Save to local
   saveLocalTodos(todoInput.value);
   //
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
-  todoInput.value = "";
+  todoInput.value = "";//clears the input field 
   //Create Completed Button
   const completedButton = document.createElement("button");
   completedButton.innerHTML = `<i class="fas fa-check"></i>`;
@@ -55,7 +48,8 @@ function addTodo(e) {
   todoDiv.appendChild(trashButton);
   //attach final Todo
   todoList.appendChild(todoDiv);
-}
+}//Appends the todoDiv (containing the todo item) to the todoList (<ul>).
+
 
 function deleteTodo(e) {
   const item = e.target;
@@ -154,3 +148,4 @@ function getTodos() {
     todoList.appendChild(todoDiv);
   });
 }
+fetchTodos()
